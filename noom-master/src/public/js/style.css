@@ -1,0 +1,529 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*.grid {*/
+/*    display: grid;*/
+
+/*}*/
+
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+
+/*첫화면---------------------*/
+button {
+    background-color: #4665d1;
+    border-color: #4665d1;
+    margin-top: 10px;
+}
+
+
+#main_main {
+    justify-content: center;
+}
+
+#waitRoom {
+    display: flex;
+    justify-content: center;
+}
+
+#waitRoom p {
+    margin: 1.2rem;
+    font-size: 18px;
+    line-height: 24px;
+    color: #4665d1;
+    text-align: center;
+}
+
+#waitRoom > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 38px;
+    border-radius: 10px;
+    margin-top: 200px;
+
+}
+
+#waitRoom > form > input {
+    width: 200px;
+    height: 30px;
+    color: #414141;
+    font-size: 14px;
+    font-weight: 400;
+    border: 1px solid #d9d9d9;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+#waitRoom button {
+    width: 182px;
+    height: 60px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 22px;
+    border-radius: 18px;
+}
+
+
+.make_room {
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 20px;
+    border-radius: 10px;
+    float: right;
+}
+/*첫화면---------------------*/
+
+
+.container {
+    width: 100%;
+    height: 100%;
+    background: black;
+}
+
+#video-grid {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    /*justify-content 아이템들을 가운데로 정렬한다*/
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}
+
+
+.video {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+video:nth-child(2):last-child {
+    grid-column: 2;
+    margin-left: 200px;
+}
+
+/* 3 players */
+.video:nth-child(3):last-child {
+    grid-column: span 2;
+    margin-left: 200px;
+}
+
+
+/* 4 players  */
+.video:nth-child(4):last-child {
+    grid-column: 2;
+    margin-left: 10px;
+}
+
+
+.main__left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* flex-direction 버튼들이 아래로 향하게 한다   */
+}
+
+.main__right {
+    flex: 0.4;
+    display: flex;
+    flex-direction: column;
+    background-color: #242324;
+    border-left: 1px solid #3d3d42;
+}
+
+.main__videos {
+    flex-grow: 1;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.main__controls {
+    display: flex;
+    background-color: #1c1e20;
+    color: #d2d2d2;
+    padding: 5px;
+    justify-content: space-between;
+}
+
+.main__controls_block {
+    display: flex;
+}
+
+.main__controls_button {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    min-width: 80px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.main__controls_button span {
+    display: block;
+}
+
+.main__controls_button:hover {
+    background-color: #34383b;
+}
+
+.main__controls_button i {
+    font-size: 25px;
+}
+
+.leaveMeeting {
+    background-color: red;
+    color: #fff;
+}
+
+.main__header {
+    color: #f5f5f5;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid #3d3d42;
+}
+
+
+/*채팅 화면*/
+.wrapper .display-container ul li > div { font-size: 13px;  flex-direction: column; flex-wrap: wrap; overflow: auto;}
+.wrapper .display-container ul li > .sender{ display: flex; align-items: flex-end; margin-top: 10px}
+.wrapper .display-container ul li div> .sender_message {
+    font-weight: bold; text-align: right; color: black; font-size: large; word-break:break-all; display: inline-block;  margin: 5px 5px; border: 1px solid #888; padding: 10px; border-radius: 5px; background-color: yellow; max-width: 80%; float: right}
+.wrapper .display-container ul li div > .time {font-size: 14px; color: white; margin-right: 10px; margin-bottom: 5px}
+
+.wrapper .display-container ul li div>.user_nick {font-size: larger; color: white; margin-top: 10px; margin-left: 5px;}
+.wrapper .display-container ul li div>.user_message {display: inline-block; word-break:break-all; margin: 5px 5px; max-width: 60%; border: 1px solid #888; padding: 10px; border-radius: 5px; background-color: white; color: black; text-align: left; font-size: large;}
+.wrapper .display-container ul li div>.user_time {font-size: 14px; color: white; margin-left: 10px; margin-bottom: 5px}
+
+
+
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+
+.display-container {
+    background: #3d3d42;
+    flex: 12;
+    overflow-y: scroll;
+}
+
+
+.input-container span {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.3rem;
+    width: 100%;
+    height: 100%;
+}
+
+
+.send-button {
+    background: #ffeb33;
+    margin-top: 5px;
+    margin-left: 5px;
+    height: 95px;
+    width: 40px;
+}
+
+.select-image-button {
+    background: #ffeb33;
+    margin-top: 5px;
+    margin-left: 5px;
+    height: 50px;
+    width: 40px;
+    font-size: 20px;
+}
+
+
+
+.chat_textarea{
+    background-color: white;
+    width: 380px;
+    font-size: 18px;
+    padding: 5px;
+    box-sizing: border-box;
+    resize:none;
+    margin-left: 3px;
+}
+
+.chatForm {
+    flex: 1;
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    padding: 3px;
+}
+
+.chatForm span {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.3rem;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.in_out_sapn {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: white;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+#btnWrap {
+    width: 500px;
+    margin: 100px auto;
+}
+#popupBtn {
+    width: 150px;
+    height: 50px;
+    padding: 10px 5px;
+}
+#modalWrap {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    display: none;
+}
+
+#modalBody {
+    width: 500px;
+    height: 300px;
+    padding: 30px 30px;
+    margin: 0 auto;
+    border: 1px solid #777;
+    background-color: #fff;
+}
+
+#closeBtn {
+    float:right;
+    font-weight: bold;
+    color: #777;
+    font-size:25px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+/*팝업 파일리스트*/
+.insert {
+    padding: 20px 30px;
+    display: block;
+    width: 600px;
+    margin: 5vh auto;
+    height: 90vh;
+    border: 1px solid #dbdbdb;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.insert .file-list {
+    height: 100px;
+    overflow: auto;
+    border: 1px solid #989898;
+    padding: 10px;
+}
+.insert .file-list .filebox p {
+    font-size: 14px;
+    margin-top: 10px;
+    display: inline-block;
+}
+.insert .file-list .filebox .delete i{
+    color: #ff5353;
+    margin-left: 5px;
+}
+
+
+.delete{
+    height: 10px;
+    width: 10px;
+}
+
+
+.btn-upload {
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border: 1px solid rgb(77,77,77);
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    &:hover {
+        background: rgb(77,77,77);
+        color: #fff;
+    }
+}
+
+#file {
+    display: none;
+}
+
+
+
+
+
+.modal{
+    position:absolute;
+    display:none;
+
+    justify-content: center;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal_body{
+    position:absolute;
+    top:50%;
+
+
+width:400px;
+height:250px;
+
+padding:40px;
+
+    text-align: center;
+
+    background-color: rgb(255,255,255);
+border-radius:10px;
+box-shadow:0 2px 3px 0 rgba(34,36,38,0.15);
+
+transform:translateY(-50%);
+}
+
+
+
+.modal_body > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.modal_body > form > input {
+    width: 200px;
+    height: 30px;
+    color: #414141;
+    font-size: 20px;
+    font-weight: 400;
+    border: 1px solid #d9d9d9;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.modal_body button {
+    width: 100px;
+    height: 30px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 22px;
+    border-radius: 18px;
+}
+
+
+
+
+.modal_body_image {
+    position:absolute;
+    top:40%;
+
+
+    width:400px;
+    height:auto;
+
+    padding:10px;
+
+    text-align: center;
+
+    background-color: rgb(255,255,255);
+    border-radius:10px;
+    box-shadow:0 2px 3px 0 rgba(34,36,38,0.15);
+
+    transform:translateY(-50%);
+}
+
+
+    .modal_body button {
+        width: 100px;
+        height: 30px;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 22px;
+        border-radius: 18px;
+}
+
+
+
+.my_send_image {
+    width: 150px;
+    height: 150px;
+    margin-right: 5px;
+}
+
+
+.your_send_image {
+    width: 150px;
+    height: 150px;
+    margin-left: 5px;
+}
+
+
+
+
